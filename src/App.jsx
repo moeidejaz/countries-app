@@ -2,6 +2,7 @@ import { useState, createContext } from "react";
 import "./App.css";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
+import Footer from "./Components/Footer";
 
 export const Context = createContext();
 
@@ -24,7 +25,7 @@ function App() {
       <Context.Provider value={contextValues}>
         <Header />
         <Main />
-        <footer/>
+        <Footer/>
       </Context.Provider>
     </>
   );

@@ -9,6 +9,7 @@ const lightTheme = [
     '--filter-box-bg-color: white',
     '--filter-popup-options-bg-color: white',
     '--filter-option-hover-color: rgba(0, 0, 0, 0.0532439)',
+    '--social-icon-color: #000000',
     '--country-box-bg-color: white',
     '--border-country-bg-color: white',
     '--go-back-bg-color: white'
@@ -24,6 +25,7 @@ const darkTheme = [
     '--filter-box-bg-color: #2B3844',
     '--filter-popup-options-bg-color: #2B3844',
     '--filter-option-hover-color: rgba(0, 0, 0, 0.0532439)',
+    '--social-icon-color: #FFFFFF',
     '--country-box-bg-color: #2B3844',
     '--border-country-bg-color: #2B3844',
     '--go-back-bg-color: #2B3844'

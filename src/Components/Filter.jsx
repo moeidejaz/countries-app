@@ -20,12 +20,12 @@ const Filter = () => {
     }
   }
 
+  function handleOption(e){
+console.log(e.target.getAttribute('data-value'));
+  }
+
   return (
-    <div
-      className={styles.filterContainer}
-      ref={filterBox}
-      onClick={handleClick}
-    >
+    <div className={styles.filterContainer} ref={filterBox} onClick={handleClick}>
       <div className={styles.filter}>
         <p>Filter by Region</p>
         <i className="fa-solid fa-chevron-down" ref={arrow}></i>
@@ -33,11 +33,11 @@ const Filter = () => {
 
       <div className={styles.options} ref={options}>
         <ul>
-          <li name="africa">Africa</li>
-          <li name="america">America</li>
-          <li name="asia">Asia</li>
-          <li name="europe">Europe</li>
-          <li name="oceania">Oceania</li>
+          <li name="africa" data-value="africa" onClick={handleOption}>Africa</li>
+          <li name="america" data-value="america">America</li>
+          <li name="asia" data-value="asia">Asia</li>
+          <li name="europe" data-value="europe">Europe</li>
+          <li name="oceania" data-value="oceania">Oceania</li>
         </ul>
       </div>
     </div>

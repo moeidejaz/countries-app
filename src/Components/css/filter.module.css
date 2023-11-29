@@ -22,10 +22,6 @@
     align-items: center;
 }
 
-.filter:hover {
-    /* cursor: pointer; */
-}
-
 .options {
     pointer-events: none;
     width: 246px;
@@ -40,21 +36,23 @@
     display: none;
 
     border-radius: 8px;
+
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.532439);
 }
 
-ul {
+.options > ul {
     list-style-type: none;
     width: 100%;
 }
 
-li{
+.options > ul > li{
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
     pointer-events: all;
     cursor: pointer;
 }
 
-li:hover {
+.options > ul > li:hover {
     background-color: var(--filter-option-hover-color);
 }
 
