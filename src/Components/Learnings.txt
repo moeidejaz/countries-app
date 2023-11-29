@@ -1,0 +1,2 @@
+--mask property
+--window.getComputedStyle(options.current).getPropertyValue("display")
