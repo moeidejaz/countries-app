@@ -51,7 +51,7 @@ const Main = () => {
             population={item.population}
             region={item.region}
             capital={item.capital}
-            img={item.flags.svg}
+            img={item.flags.png}
           />;
         })}
       </section>
