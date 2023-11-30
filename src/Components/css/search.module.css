@@ -38,7 +38,7 @@
     background-color: var(--search-bar-icon-color);
 }
 
-@media (max-width: 428px) {
+@media (max-width: 528px) {
     .searchInput {
         width: 392px;
     }

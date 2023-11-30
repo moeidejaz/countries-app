@@ -19,24 +19,12 @@ main {
     margin-top: 2rem;
 }
 
-@media (max-width: 428px) {
-
-    main {
-        padding: 0 1.25rem;
-    }
-
-    .main_header {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: flex-start;
-    }
-}
-
 @media (max-width: 1024px) {
     .countries {
         display: grid;
-        grid-template-columns: repeat(3, 264px);
+        grid-template-columns: repeat(3, 244px);
         justify-content: center;
+        gap: 2rem;
     }
 }
 
@@ -51,10 +39,22 @@ main {
     }
 }
 
-@media (max-width: 428px) {
+@media (max-width: 528px) {
+
+
+    main {
+        padding: 0 1.25rem;
+    }
+
+    .main_header {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
 
     .countries {
         grid-template-columns: repeat(1, 264px);
         justify-content: space-around;
     }
+
 }
