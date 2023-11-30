@@ -48,7 +48,7 @@ const Main = () => {
           return <CountryCard
           key={index}
             name={item.name.official}
-            population={item.population}
+            population={item.population.toLocaleString()}
             region={item.region}
             capital={item.capital}
             img={item.flags.png}

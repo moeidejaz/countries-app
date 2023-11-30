@@ -1,2 +1,4 @@
---mask property
---window.getComputedStyle(options.current).getPropertyValue("display")
+-- mask property
+-- window.getComputedStyle(options.current).getPropertyValue("display")
+-- item.population.toLocaleString()
+-- pngs
