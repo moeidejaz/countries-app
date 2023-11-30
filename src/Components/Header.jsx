@@ -17,7 +17,7 @@ const Header = () => {
   }, [darkMode]);
 
   return (
-    <header>
+    <header className={styles.header}>
       <h2>Where in the World?</h2>
       <p className={styles.modeChanger} onClick={toggleMode}>
         <img src={darkMode ? darkMoon : lightMoon} alt="moon" /> {darkMode ? "Light Mode" : "Dark Mode"}

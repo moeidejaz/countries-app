@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./css/filter.module.css";
 
 const Filter = () => {
@@ -19,6 +19,19 @@ const Filter = () => {
       filterBox.current.style.boxShadow = '';
     }
   }
+
+  useEffect(() => {
+    const clickHandler = ()=> {
+      
+    }
+
+    document.addEventListener("click" , clickHandler)
+    console.log("click");  
+    return () => {
+      document.removeEventListener("click" , clickHandler)
+    }
+  }, [])
+  
 
   function handleOption(e){
 console.log(e.target.getAttribute('data-value'));
