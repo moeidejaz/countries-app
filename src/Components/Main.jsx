@@ -1,13 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Context } from "../App.jsx";
 import SearchBar from "./SearchBar.jsx";
 import SearchFilter from "./Filter.jsx";
 import styles from "./css/main.module.css";
 import CountryCard from "./CountryCard.jsx";
 
 const Main = () => {
+  const { input } = useContext(Context);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const handleSearch = () => {};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +31,7 @@ const Main = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array means this effect runs once after the component mounts
+  }, []);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -35,6 +39,12 @@ const Main = () => {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
+
+  const filteredData = data.filter(
+    (item) =>
+      item.name.official.toLowerCase().includes(input.toLowerCase()) ||
+      item.name.common.toLowerCase().includes(input.toLowerCase())
+  );
 
   return (
     <main>
@@ -44,16 +54,31 @@ const Main = () => {
       </section>
 
       <section className={styles.countries}>
-        {data.map((item , index) => {
-          return <CountryCard
-          key={index}
-            name={item.name.official}
-            population={item.population.toLocaleString()}
-            region={item.region}
-            capital={item.capital}
-            img={item.flags.png}
-          />;
-        })}
+        {input
+          ? filteredData.map((item, index) => {
+              return (
+                <CountryCard
+                  key={index}
+                  name={item.name.official}
+                  population={item.population.toLocaleString()}
+                  region={item.region}
+                  capital={item.capital}
+                  img={item.flags.png}
+                />
+              );
+            })
+          : data.map((item, index) => {
+              return (
+                <CountryCard
+                  key={index}
+                  name={item.name.official}
+                  population={item.population.toLocaleString()}
+                  region={item.region}
+                  capital={item.capital}
+                  img={item.flags.png}
+                />
+              );
+            })}
       </section>
     </main>
   );

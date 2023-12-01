@@ -10,6 +10,7 @@
     border: none;
     padding-left: 4.5rem;
     border-radius: 8px;
+    color: var(--text-color);
     background-color: var(--search-bar-bg-color);
     transition: background-color 0.2s linear;
     box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -40,13 +41,7 @@
 
 @media (max-width: 528px) {
     .searchInput {
-        width: 392px;
-    }
-}
-
-@media (max-width: 377px) {
-    .searchInput {
-        width: 328px;
+        width: 342px;
     }
 }
 

@@ -25,8 +25,7 @@ const Filter = () => {
       
     }
 
-    document.addEventListener("click" , clickHandler)
-    console.log("click");  
+    document.addEventListener("click" , clickHandler) 
     return () => {
       document.removeEventListener("click" , clickHandler)
     }
