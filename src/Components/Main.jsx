@@ -37,7 +37,9 @@ const Main = () => {
     return <p>Loading...</p>;
   }
   if (error) {
-    return <p>Error: {error.message}</p>;
+    
+    console.log(window.innerHeight);
+    return <main><p className={styles.error}>Error: {"No countries found."}</p></main>;
   }
 
   const filteredData = data.filter(
