@@ -4,7 +4,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: var(--header-bar-bg-color);
-    transition: background-color 0.2s linear;
+    transition: background-color 0.1s linear;
     padding: 1.5rem 7.5rem;
     box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.116);
     color: var(--text-color);

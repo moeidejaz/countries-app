@@ -34,12 +34,20 @@ const Main = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <main>
+        <p className={styles.loading}>Loading...</p>
+      </main>
+    );
   }
+
   if (error) {
-    
     console.log(window.innerHeight);
-    return <main><p className={styles.error}>Error: {"No countries found."}</p></main>;
+    return (
+      <main>
+        <p className={styles.error}>Error: {"No countries found."}</p>
+      </main>
+    );
   }
 
   const filteredData = data.filter(
