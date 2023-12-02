@@ -6,12 +6,10 @@ import styles from "./css/main.module.css";
 import CountryCard from "./CountryCard.jsx";
 
 const Main = () => {
-  const { input } = useContext(Context);
+  const { input, selectedOption } = useContext(Context);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const handleSearch = () => {};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,11 +48,13 @@ const Main = () => {
     );
   }
 
-  const filteredData = data.filter(
+  const searchData = data.filter(
     (item) =>
       item.name.official.toLowerCase().includes(input.toLowerCase()) ||
       item.name.common.toLowerCase().includes(input.toLowerCase())
   );
+
+  const regionData = data.filter((item) => item.region === selectedOption);
 
   return (
     <main>
@@ -65,7 +65,20 @@ const Main = () => {
 
       <section className={styles.countries}>
         {input
-          ? filteredData.map((item, index) => {
+          ? searchData.map((item, index) => {
+              return (
+                <CountryCard
+                  key={index}
+                  name={item.name.official}
+                  population={item.population.toLocaleString()}
+                  region={item.region}
+                  capital={item.capital}
+                  img={item.flags.png}
+                />
+              );
+            })
+          : selectedOption
+          ? regionData.map((item, index) => {
               return (
                 <CountryCard
                   key={index}

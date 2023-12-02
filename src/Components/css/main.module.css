@@ -54,7 +54,7 @@ main:has(.error , .loading) {
 
     main {
         padding: 0 1.25rem;
-        min-height: calc(100vh - 140px);
+        min-height: calc(90vh - 110px);
     }
 
     .main_header {

@@ -18,6 +18,7 @@ const SearchBar = () => {
       <div className={styles.searchBar}>
         <input
           type="text"
+          name="searchBar"
           className={styles.searchInput}
           placeholder="Search for a country..."
           onFocus={handleFocus}

@@ -1,10 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState , useRef, useEffect , useContext } from "react";
+import { Context } from "../App";
 import styles from "./css/filter.module.css";
 
 const Filter = () => {
   const filterBox = useRef();
   const options = useRef();
   const arrow = useRef();
+  const { handleOptions , selectedFilter } = useContext(Context);
 
   function handleClick() {
     const display = window.getComputedStyle(options.current).getPropertyValue("display");
@@ -30,26 +32,21 @@ const Filter = () => {
       document.removeEventListener("click" , clickHandler)
     }
   }, [])
-  
-
-  function handleOption(e){
-console.log(e.target.getAttribute('data-value'));
-  }
 
   return (
     <div className={styles.filterContainer} ref={filterBox} onClick={handleClick}>
       <div className={styles.filter}>
-        <p>Filter by Region</p>
+        <p>{selectedFilter}</p>
         <i className="fa-solid fa-chevron-down" ref={arrow}></i>
       </div>
 
       <div className={styles.options} ref={options}>
         <ul>
-          <li name="africa" data-value="africa" onClick={handleOption}>Africa</li>
-          <li name="america" data-value="america">America</li>
-          <li name="asia" data-value="asia">Asia</li>
-          <li name="europe" data-value="europe">Europe</li>
-          <li name="oceania" data-value="oceania">Oceania</li>
+          <li name="Africa" data-value="Africa" onClick={handleOptions}>Africa</li>
+          <li name="Americas" data-value="Americas" onClick={handleOptions}>America</li>
+          <li name="Asia" data-value="Asia" onClick={handleOptions}>Asia</li>
+          <li name="Europe" data-value="Europe" onClick={handleOptions}>Europe</li>
+          <li name="Oceania" data-value="Oceania" onClick={handleOptions}>Oceania</li>
         </ul>
       </div>
     </div>
