@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar.jsx";
 import SearchFilter from "./Filter.jsx";
 import Card from "./Card.jsx";
 import Country from "./Country.jsx";
+import CardsLoading from "./LoadingScreen/CardsLoading.jsx";
 import styles from "./css/main.module.css";
 
 const Main = () => {
@@ -35,16 +36,16 @@ const Main = () => {
   if (loading) {
     return (
       <main>
-        <p className={styles.loading}>Loading...</p>
+        <CardsLoading />
       </main>
     );
   }
 
   if (error) {
-    console.log(window.innerHeight);
     return (
       <main>
-        <p className={styles.error}>Error: {"No countries found."}</p>
+        {/* <p className={styles.error}>Error: {"No countries found."}</p> */}
+        <CardsLoading />
       </main>
     );
   }
@@ -71,6 +72,7 @@ const Main = () => {
                 <Card
                   key={index}
                   name={item.name.official}
+                  cca3={item.cca3.toLowerCase()}
                   population={item.population.toLocaleString()}
                   region={item.region}
                   capital={item.capital}
@@ -84,6 +86,7 @@ const Main = () => {
                 <Card
                   key={index}
                   name={item.name.official}
+                  cca3={item.cca3.toLowerCase()}
                   population={item.population.toLocaleString()}
                   region={item.region}
                   capital={item.capital}
@@ -96,6 +99,7 @@ const Main = () => {
                 <Card
                   key={index}
                   name={item.name.official}
+                  cca3={item.cca3.toLowerCase()}
                   population={item.population.toLocaleString()}
                   region={item.region}
                   capital={item.capital}
@@ -104,7 +108,6 @@ const Main = () => {
               );
             })}
       </section>
-      {/* <Country/> */}
     </main>
   );
 };

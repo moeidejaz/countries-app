@@ -3,32 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Loading from "./LoadingScreen/CardsLoading";
 import styles from "./css/country.module.css";
 
-const Country = () => {
-  const [data, setData] = useState(null);
-  const { state } = useLocation();
-  const navigate = useNavigate();
-
-  const handleGoBack = () => {
-    navigate("/");
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://restcountries.com/v3.1/alpha/${state}`
-        );
-        const results = await response.json();
-        setData(results[0]);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  return data ? (
+const CountryLoading = () => {
+ 
+  return (
     <section className={styles.country}>
       <div className={styles.backBtn} onClick={handleGoBack}>
         <img className={styles.leftArrow} />
@@ -109,9 +86,7 @@ const Country = () => {
         </section>
       </section>
     </section>
-  ) : (
-    <Loading />
-  );
+  )
 };
 
 export default Country;

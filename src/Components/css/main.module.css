@@ -2,8 +2,9 @@ main {
     /* max-width: 100vw; */
     /* padding: 0 5.5rem; */
     color: var(--text-color);
-    min-height: calc(100vh - 183px);
+    min-height: calc(100vh - 150px);
     background-color: var(--body-bg-color);
+    transition: background-color 0.2s linear;
 }
 
 main:has(.error , .loading) {
@@ -33,6 +34,8 @@ main:has(.error , .loading) {
     .countries {
         display: grid;
         grid-template-columns: repeat(3, 264px);
+        grid-row-gap: 0rem;
+        justify-content: center;
     }
 }
 
@@ -52,7 +55,7 @@ main:has(.error , .loading) {
 
     main {
         padding: 0 1.25rem;
-        min-height: calc(90vh - 110px);
+        min-height: calc(100vh - 205px);
     }
 
     .main_header {

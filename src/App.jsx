@@ -1,8 +1,6 @@
 import { useState, createContext } from "react";
-import "./App.css";
-import Header from "./Components/Header";
 import Main from "./Components/Main";
-import Footer from "./Components/Footer";
+import "./App.css";
 
 export const Context = createContext();
 
@@ -35,9 +33,7 @@ function App() {
   return (
     <>
       <Context.Provider value={contextValues}>
-        <Header />
         <Main />
-        <Footer/>
       </Context.Provider>
     </>
   );
