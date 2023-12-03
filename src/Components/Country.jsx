@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Loading from "./LoadingScreen/CardsLoading";
+import CountryLoading from "./LoadingScreen/CountryLoading";
 import styles from "./css/country.module.css";
 
 const Country = () => {
@@ -110,7 +110,7 @@ const Country = () => {
       </section>
     </section>
   ) : (
-    <Loading />
+    <CountryLoading />
   );
 };
 

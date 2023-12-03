@@ -1,0 +1,48 @@
+ .country {
+    margin-bottom: 2.2rem;
+    padding: 0rem 8rem;
+    min-height: 67vh;
+ }
+
+ .back {
+    margin: 3rem 0;
+ }
+
+ .flex {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    align-items: center;
+    gap: 7rem;
+ }
+
+@media (max-width: 850px) {
+    .country {
+        padding:0 2rem;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .flex {
+        grid-template-columns: 1fr;
+        transition: gap 0.2s linear;
+    }
+
+    .countryInfo{
+        width: 67%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 528px) {
+
+    .flex {
+        transition: gap 0.2s linear;
+    }
+
+    .countryInfo {
+        width: 90%;
+    }
+}
