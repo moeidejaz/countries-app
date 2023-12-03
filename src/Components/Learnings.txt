@@ -2,3 +2,9 @@
 -- window.getComputedStyle(options.current).getPropertyValue("display")
 -- item.population.toLocaleString()
 -- pngs
+-- use transitions everywhere
+-- build grid structure in mind and build using devTools
+-- write media queries in descending order always
+
+todo
+check for bugs in main

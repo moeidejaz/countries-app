@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./css/country.module.css";
+import styles from "./css/cards.module.css";
 
-const CountryCard = ({name , population , region , capital , img}) => {
+const Card = ({name , population , region , capital , imgURL}) => {
   return (
     <div className={styles.country}>
-      <img src={img} alt={`${name} flag`} />
+      <img src={imgURL} alt={`${name} flag`} />
       <ul className={styles.details}>
         <li><h3>{name}</h3></li>
         <li><span>Population:</span> {population}</li>
@@ -16,4 +16,4 @@ const CountryCard = ({name , population , region , capital , img}) => {
   4;
 };
 
-export default CountryCard;
+export default Card;

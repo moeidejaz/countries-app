@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../App.jsx";
 import SearchBar from "./SearchBar.jsx";
 import SearchFilter from "./Filter.jsx";
+import Card from "./Card.jsx";
+import Country from "./Country.jsx";
 import styles from "./css/main.module.css";
-import CountryCard from "./CountryCard.jsx";
 
 const Main = () => {
   const { input, selectedOption } = useContext(Context);
@@ -67,42 +68,43 @@ const Main = () => {
         {input
           ? searchData.map((item, index) => {
               return (
-                <CountryCard
+                <Card
                   key={index}
                   name={item.name.official}
                   population={item.population.toLocaleString()}
                   region={item.region}
                   capital={item.capital}
-                  img={item.flags.png}
+                  imgURL={item.flags.png}
                 />
               );
             })
           : selectedOption
           ? regionData.map((item, index) => {
               return (
-                <CountryCard
+                <Card
                   key={index}
                   name={item.name.official}
                   population={item.population.toLocaleString()}
                   region={item.region}
                   capital={item.capital}
-                  img={item.flags.png}
+                  imgURL={item.flags.png}
                 />
               );
             })
           : data.map((item, index) => {
               return (
-                <CountryCard
+                <Card
                   key={index}
                   name={item.name.official}
                   population={item.population.toLocaleString()}
                   region={item.region}
                   capital={item.capital}
-                  img={item.flags.png}
+                  imgURL={item.flags.png}
                 />
               );
             })}
       </section>
+      {/* <Country/> */}
     </main>
   );
 };
