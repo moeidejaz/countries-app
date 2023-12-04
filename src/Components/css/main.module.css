@@ -31,10 +31,13 @@ main:has(.error , .loading) {
 }
 
 @media (max-width: 1024px) {
+    main {
+        padding: 6rem;
+    }
     .countries {
         display: grid;
         grid-template-columns: repeat(3, 264px);
-        grid-row-gap: 0rem;
+        gap: 1.5rem;
         justify-content: center;
     }
 }
