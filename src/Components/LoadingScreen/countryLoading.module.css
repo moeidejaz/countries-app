@@ -1,7 +1,8 @@
  .country {
-    margin-bottom: 2.2rem;
+    margin-bottom: 0.75rem;
     padding: 0rem 8rem;
     min-height: 67vh;
+    min-height: calc(100vh - 210px);
  }
 
  .back {
@@ -18,6 +19,7 @@
 @media (max-width: 850px) {
     .country {
         padding:0 2rem;
+        margin-bottom: 2rem;
     }
 
     .flex {
@@ -44,5 +46,6 @@
 
     .countryInfo {
         width: 90%;
+        margin-bottom: 1.75rem;
     }
 }

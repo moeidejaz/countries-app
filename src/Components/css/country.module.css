@@ -191,6 +191,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 4.1rem;
         transition: gap 0.2s linear;
     }
 
@@ -206,6 +207,7 @@ main {
 
     .border {
         flex-direction: column;
+        margin-top: 3rem;
     }
 
     .borderList {

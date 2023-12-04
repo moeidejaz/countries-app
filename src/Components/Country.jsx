@@ -29,7 +29,7 @@ const Country = () => {
   }, []);
 
   return data ? (
-    <section className={styles.country}>
+    <main className={styles.country}>
       <div className={styles.backBtn} onClick={handleGoBack}>
         <img className={styles.leftArrow} />
         <p>Back</p>
@@ -49,27 +49,27 @@ const Country = () => {
           <section className={styles.countryinfo}>
             <section className={styles.infoLeft}>
               <p>
-                <strong>Native Name:</strong> {data.name.common}
+                Native Name: {data.name.common}
               </p>
               <p>
-                <strong>Population:</strong> {data.population.toLocaleString()}
+                Population: {data.population.toLocaleString()}
               </p>
               <p>
-                <strong>Region:</strong> {data.region}
+                Region: {data.region}
               </p>
               <p>
-                <strong>Sub Region:</strong> {data.subregion}
+                Sub Region: {data.subregion}
               </p>
               <p>
-                <strong>Capital:</strong> {data.capital}
+                Capital: {data.capital}
               </p>
             </section>
             <section className={styles.infoRight}>
               <p>
-                <strong>Top Level Domain:</strong> {data.tld}
+                Top Level Domain: {data.tld}
               </p>
               <p>
-                <strong>Currencies:</strong>
+                Currencies:
                 {/* {Object.entries(data.currencies).forEach(([key, value]) => {
                   Object.entries(value).forEach(([key , value])=>{
                     return value
@@ -80,7 +80,7 @@ const Country = () => {
                   .join(", ")}
               </p>
               <p>
-                <strong>Languages:</strong>{" "}
+                Languages:{" "}
                 {Object.values(data.languages)
                   .map((currency) => ` ${currency}`)
                   .join(", ")}
@@ -93,7 +93,7 @@ const Country = () => {
           <ul className={styles.border}>
             <div>
               <p>
-                <strong>Border Countries:</strong>
+                Border Countries:
               </p>
             </div>
             <div className={styles.borderList}>
@@ -108,7 +108,7 @@ const Country = () => {
           </ul>
         </section>
       </section>
-    </section>
+    </main>
   ) : (
     <CountryLoading />
   );

@@ -2,7 +2,7 @@ main {
     /* max-width: 100vw; */
     /* padding: 0 5.5rem; */
     color: var(--text-color);
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 210px);
     background-color: var(--body-bg-color);
     transition: background-color 0.2s linear;
 }
@@ -58,7 +58,7 @@ main:has(.error , .loading) {
 
     main {
         padding: 0 1.25rem;
-        min-height: calc(100vh - 205px);
+        min-height: calc(100vh - 90px);
     }
 
     .main_header {

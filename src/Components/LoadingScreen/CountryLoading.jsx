@@ -4,7 +4,7 @@ import styles from "./countryLoading.module.css";
 
 const CountryLoading = () => {
   return (
-    <section className={styles.country}>
+    <main className={styles.country}>
       <Skeleton animation="wave" variant="rounded" width="136px" height="40px" className={styles.back} />
       <section className={styles.flex}>
         <Skeleton animation="wave" variant="rounded" height="323px"/>
@@ -20,7 +20,7 @@ const CountryLoading = () => {
           <Skeleton animation="wave" variant="rounded" width="100%" height="20px" />
         </Stack>
       </section>
-    </section>
+    </main>
   );
 };
 
