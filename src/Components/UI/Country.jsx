@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import CountryLoading from "./LoadingScreen/CountryLoading";
-import styles from "./css/country.module.css";
+import CountryLoading from "../LoadingScreen/CountryLoading";
+import styles from "../css/country.module.css";
 
 const Country = () => {
   const [data, setData] = useState(null);
@@ -12,21 +12,46 @@ const Country = () => {
     navigate("/");
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://restcountries.com/v3.1/alpha/${state}`
-        );
-        const results = await response.json();
-        setData(results[0]);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://restcountries.com/v3.1/alpha/${state}`
+      );
+      const results = await response.json();
+      setData(results[0]);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
+  const docTitle = () => {
+    // Check if data is not null before logging
+    data
+      ? (document.title = data.name.common)
+      : (document.title = "Rest Countries App");
+  };
+
+  useEffect(() => {
+    // Call fetchData from within the useEffect
     fetchData();
-  }, []);
+  }, []); // Runs only on mount
+
+  useEffect(() => {
+    // document.title = "Pakistan"
+
+    docTitle();
+    return () => {
+      document.title = "Rest Countries App";
+    };
+  }, [data]);
+
+  // useEffect(() => {
+  //   document.title = "Pak"
+
+  //   return () => {
+  //     document.title = "Rest Countries App"
+  //   };
+  // }, []);
 
   return data ? (
     <main className={styles.country}>
@@ -48,26 +73,14 @@ const Country = () => {
           {/* Row 2: Left and Right Details */}
           <section className={styles.countryinfo}>
             <section className={styles.infoLeft}>
-              <p>
-                Native Name: {data.name.common}
-              </p>
-              <p>
-                Population: {data.population.toLocaleString()}
-              </p>
-              <p>
-                Region: {data.region}
-              </p>
-              <p>
-                Sub Region: {data.subregion}
-              </p>
-              <p>
-                Capital: {data.capital}
-              </p>
+              <p>Native Name: {data.name.common}</p>
+              <p>Population: {data.population.toLocaleString()}</p>
+              <p>Region: {data.region}</p>
+              <p>Sub Region: {data.subregion}</p>
+              <p>Capital: {data.capital}</p>
             </section>
             <section className={styles.infoRight}>
-              <p>
-                Top Level Domain: {data.tld}
-              </p>
+              <p>Top Level Domain: {data.tld}</p>
               <p>
                 Currencies:
                 {/* {Object.entries(data.currencies).forEach(([key, value]) => {
@@ -92,9 +105,7 @@ const Country = () => {
 
           <ul className={styles.border}>
             <div>
-              <p>
-                Border Countries:
-              </p>
+              <p>Border Countries:</p>
             </div>
             <div className={styles.borderList}>
               {data.borders ? (

@@ -1,11 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Context } from "../App.jsx";
-import SearchBar from "./SearchBar.jsx";
-import SearchFilter from "./Filter.jsx";
-import Card from "./Card.jsx";
-import Country from "./Country.jsx";
-import CardsLoading from "./LoadingScreen/CardsLoading.jsx";
-import styles from "./css/main.module.css";
+import { SearchBar , Filter , Card , Country } from "./NamedExports.jsx";
+import { Context } from "../../App.jsx";
+
+import CardsLoading from "../LoadingScreen/CardsLoading.jsx";
+import styles from "../css/main.module.css";
 
 const Main = () => {
   const { input, selectedOption } = useContext(Context);
@@ -62,7 +60,7 @@ const Main = () => {
     <main>
       <section className={styles.main_header}>
         <SearchBar />
-        <SearchFilter />
+        <Filter />
       </section>
 
       <section className={styles.countries}>

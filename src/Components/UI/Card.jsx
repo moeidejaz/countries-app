@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Country from "./Country";
-import styles from "./css/cards.module.css";
+import styles from "../css/cards.module.css";
 
 const Card = ({ name, population, region, capital, imgURL, cca3 }) => {
   const navigate = useNavigate()

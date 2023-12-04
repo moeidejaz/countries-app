@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { Context } from "../App";
-import styles from "./css/search.module.css";
+import { Context } from "../../App";
+import styles from "../css/search.module.css";
 
 const SearchBar = () => {
   const { handleChange, input } = useContext(Context);
