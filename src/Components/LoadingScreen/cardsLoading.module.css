@@ -7,6 +7,16 @@
     transition: all 0.2s linear;
 }
 
+@media (max-width: 1300px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 264px);
+        justify-content: center;
+        gap: 1rem;
+        margin: 4rem 0;
+    }
+}
+
 @media (max-width: 1028px) {
     .cards {
         display: grid;

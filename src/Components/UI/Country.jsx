@@ -8,6 +8,7 @@ const Country = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
+  //routing to go back to hompage
   const handleGoBack = () => {
     navigate("/");
   };
@@ -24,6 +25,7 @@ const Country = () => {
     }
   };
 
+  //to update the page title to current country
   const docTitle = () => {
     // Check if data is not null before logging
     data
@@ -32,27 +34,18 @@ const Country = () => {
   };
 
   useEffect(() => {
-    // Call fetchData from within the useEffect
     fetchData();
-  }, []); // Runs only on mount
+  }, []);
 
+  //using separate useEffect on data change values so easy to manage
   useEffect(() => {
     // document.title = "Pakistan"
-
     docTitle();
     return () => {
       document.title = "Rest Countries App";
     };
   }, [data]);
-
-  // useEffect(() => {
-  //   document.title = "Pak"
-
-  //   return () => {
-  //     document.title = "Rest Countries App"
-  //   };
-  // }, []);
-
+  //using ternanry for the skeleton loading
   return data ? (
     <main className={styles.country}>
       <div className={styles.backBtn} onClick={handleGoBack}>
@@ -88,6 +81,8 @@ const Country = () => {
                     return value
                   })
                 })} */}
+                
+                {/* as we are only interested in values we map through values.. making code simple */}
                 {Object.values(data.currencies)
                   .map((currency) => ` ${currency.name} ${currency.symbol}`)
                   .join(", ")}

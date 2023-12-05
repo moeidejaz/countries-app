@@ -6,12 +6,13 @@ import lightMoon from "../../assets/lightMoon.svg";
 import styles from "../css/header.module.css";
 
 const Header = () => {
+  //changing the mode using state
   const [darkMode, setDarkMode] = useState(true);
 
   function toggleMode() {
     setDarkMode(!darkMode);
   }
-
+  //using swithTheme utility to change mode
   useEffect(() => {
     SwitchTheme(darkMode);
   }, [darkMode]);

@@ -2,6 +2,10 @@ import React from 'react';
 import {Skeleton} from '@mui/material';
 import styles from './cardsLoading.module.css';
 
+
+// so these skeleton loading screens are from MUI .
+// very easy to use
+//shoutout to AbelMuro fo these and Theme change and much more
 function CardsLoading() {
     return(
         <section className={styles.cards}>

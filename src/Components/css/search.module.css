@@ -39,14 +39,16 @@
     background-color: var(--search-bar-icon-color);
 }
 
+
+
 @media (max-width: 528px) {
     .searchInput {
         width: 342px;
     }
 }
 
-@media (max-width: 768px) {
-    header {
-        padding: 1.5rem 2rem;
+@media (max-width : 320px){
+    .searchInput {
+        width: 99.5%;
     }
 }

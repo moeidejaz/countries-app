@@ -5,6 +5,7 @@ import styles from "../css/search.module.css";
 const SearchBar = () => {
   const { handleChange, input } = useContext(Context);
 
+//in here managing the focus and blur on searchInput element
   function handleFocus(e) {
     e.target.style.boxShadow = "0px 2px 9px rgba(0, 0, 0, 0.532439)";
   }
