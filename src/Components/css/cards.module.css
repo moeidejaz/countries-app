@@ -20,6 +20,7 @@
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     transition: width 0.2s linear;
+    object-fit: fill;
 }
 
 .details {
