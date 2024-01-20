@@ -10,7 +10,7 @@ const Filter = () => {
 
   function handleClick() {
     const display = window.getComputedStyle(options.current).getPropertyValue("display");
-//managing the UI of filter box
+    //managing the UI of filter box
     if (display === "none") {
       options.current.style.display = "flex";
       arrow.current.style.transform = "rotate(180deg)";
