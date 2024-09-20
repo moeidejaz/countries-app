@@ -11,6 +11,8 @@ function App() {
 
   function handleChange(e) {
     setInput(e.target.value);
+    console.log(input);
+    
   }
 
   function handleOptions(e) {
